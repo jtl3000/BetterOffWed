@@ -1,0 +1,63 @@
+
+
+<% if user_signed_in? %>
+
+  
+    <% if Bet.exists?(current_user.id) %>
+      
+      <p>Seriously <%= current_user.displayname %>, you want to place another bet?
+        Sorry, but only one bet per customer. If you'd like to see your, and everyone else's predictions
+        you can <%= link_to 'click here.', bets_path %></p>
+      
+      <% else %>
+      
+
+<%= semantic_form_for(@bet) do |f| %>
+
+
+
+<%= f.inputs do %>
+  <% if @bet.errors.any? %>
+    
+    <div id="error_explanation">
+      <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+      
+      <ul>
+
+      <% @bet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <% end %>
+      
+      <%= f.input :EngagementDate, :label => "Whe do they get engaged?", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+
+    <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    <%= f.input :WillDivorce, :label => "Will they get a divorce?", :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    
+    <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    <%= f.input :OneDead, :label => "Will one of them kill the other?", :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    
+    <%= f.input :WhoKillsWho, :label => "Who kills who?", :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+    
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
+<% end %>
+
+<% else %>
+
+<p>You must be <%= link_to 'registered', new_user_registration_path %> to place a bet.</p>
+
+<% end %>
