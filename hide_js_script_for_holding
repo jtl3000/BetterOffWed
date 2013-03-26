@@ -1,0 +1,53 @@
+  $(document).ready(function(){
+     if($('#Postponement').val() != "No"){
+        $("#NewWeddingDate").attr('disabled','disabled');
+     }
+     else{
+        $("#Postponement").removeAttr('disabled');
+     }
+
+     $('#Postponement').change(function(){
+        if($(this).val() != "No"){
+          $("#NewWeddingDate").attr('disabled','disabled');
+        }
+        else{
+          $("#Postponement").removeAttr('disabled');
+        }
+     })
+  });
+
+ $(document).ready(function(){
+     if($('#WillDivorce').val() != "No"){
+        $("#DivorceDate").attr('disabled','disabled');
+     }
+     else{
+        $("#DivorceDate").removeAttr('disabled');
+     }
+
+     $('#WillDivorce').change(function(){
+        if($(this).val() != "No"){
+          $("#DivorceDate").attr('disabled','disabled');
+        }
+        else{
+          $("#DivorceDate").removeAttr('disabled');
+        }
+     })
+  });
+
+ $(document).ready(function(){
+     if($('#OneDead').val() != "No"){
+        $("#WhoKillsWho").attr('disabled','disabled');
+     }
+     else{
+        $("#WhoKillsWho").removeAttr('disabled');
+     }
+
+     $('#OneDead').change(function(){
+        if($(this).val() != "No"){
+          $("#WhoKillsWho").attr('disabled','disabled');
+        }
+        else{
+          $("#WhoKillsWho").removeAttr('disabled');
+        }
+     })
+  });

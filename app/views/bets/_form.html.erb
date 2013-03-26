@@ -1,61 +1,4 @@
 
-<script>
-  $(document).ready(function(){
-     if($('#Postponement').val() != "No"){
-        $("#NewWeddingDate").attr('disabled','disabled');
-     }
-     else{
-        $("#project_capital_cost").removeAttr('disabled');
-     }
-
-     $('#Postponement').change(function(){
-        if($(this).val() != "No"){
-          $("#NewWeddingDate").attr('disabled','disabled');
-        }
-        else{
-          $("#Postponement").removeAttr('disabled');
-        }
-     })
-  });
-
- $(document).ready(function(){
-     if($('#WillDivorce').val() != "No"){
-        $("#DivorceDate").attr('disabled','disabled');
-     }
-     else{
-        $("#DivorceDate").removeAttr('disabled');
-     }
-
-     $('#WillDivorce').change(function(){
-        if($(this).val() != "No"){
-          $("#DivorceDate").attr('disabled','disabled');
-        }
-        else{
-          $("#DivorceDate").removeAttr('disabled');
-        }
-     })
-  });
-
- $(document).ready(function(){
-     if($('#OneDead').val() != "No"){
-        $("#WhoKillsWho").attr('disabled','disabled');
-     }
-     else{
-        $("#WhoKillsWho").removeAttr('disabled');
-     }
-
-     $('#OneDead').change(function(){
-        if($(this).val() != "No"){
-          $("#WhoKillsWho").attr('disabled','disabled');
-        }
-        else{
-          $("#WhoKillsWho").removeAttr('disabled');
-        }
-     })
-  });
-
-
-</script>
 
 <% if user_signed_in? %>
 
@@ -69,7 +12,7 @@
       <% else %>
       
 
-<%= semantic_form_for(@bet)  do |f| %>
+<%= semantic_form_for(@bet, remote: true)  do |f| %>
 
 
 
@@ -90,17 +33,25 @@
 
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
-    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :id => 'Postponement', :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    <div id='Postponement'>
 
-    <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :id => 'NewWeddingDate', :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
-    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :id => 'WillDivorce', :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    </div>
+
+    <div class = 'Optional'>
+
+    <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :input_html => { :id => 'NewWeddingDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    </div>
+
+    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
     
-    <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :id => 'DivorceDate', :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+    <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :input_html => { :id => 'DivorceDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
-    <%= f.input :OneDead, :label => "Will one of them kill the other?", :id => 'OneDead', :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
     
-    <%= f.input :WhoKillsWho, :label => "Who kills who?", :id => 'WhoKillsWho', :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+    <%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' }, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
     
       </ul>
     </div>
