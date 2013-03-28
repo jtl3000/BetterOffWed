@@ -33,25 +33,54 @@
 
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
-    <div id='Postponement'>
 
-    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+
+
+
+
+    <div id='Postponement' >
+
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
     </div>
 
-    <div class = 'Optional'>
+    <div id = 'NewWeddingDate' >
 
     <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :input_html => { :id => 'NewWeddingDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
     </div>
 
-    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+<script>
+
+
+
+</script>
+
+
+ 
+<div id = 'WillDivorce'>
+
+    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+
+    </div>
+
+
     
+<div id = 'DivorceDate'>
+
     <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :input_html => { :id => 'DivorceDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
-    <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead' }, :as => :radio, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+  </div>
+
+    <div id = 'OneDead'>
+
+      <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+
+    </div>
     
-    <%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' }, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+    <div id = 'WhoKillsWho'><%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' }, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+
+    </div>
     
       </ul>
     </div>
