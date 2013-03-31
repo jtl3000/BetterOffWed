@@ -1,4 +1,7 @@
 Betteroffwed::Application.routes.draw do
+  resources :payments
+
+
   devise_for :users
 
   devise_for :views
@@ -12,6 +15,12 @@ Betteroffwed::Application.routes.draw do
   match 'about' => "static_pages#about"
 
   match 'help' => "static_pages#help"
+
+  match 'pay' => 'payments#new'
+
+  match 'ordersuccess' => 'payments#success'
+
+  match 'ordercancel' => 'payments#fail'
 
   resources :bets
 

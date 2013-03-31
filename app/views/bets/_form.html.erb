@@ -29,7 +29,7 @@
       <% end %>
       <% end %>
       
-      <%= f.input :EngagementDate, :label => "Whe do they get engaged?", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+      <%= f.input :EngagementDate, :label => "When do they get engaged?", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 

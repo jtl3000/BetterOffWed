@@ -1,5 +1,9 @@
 // My slider code
 
+// $(function to_test() {
+//    alert("I'm displaying an alert");
+//    return 42;
+//  })
 
 
 $(function () {
