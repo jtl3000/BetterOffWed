@@ -3,7 +3,7 @@
 <% if user_signed_in? %>
 
   
-    <% if Bet.exists?(current_user.id) %>
+    <% if Bet.exists?(current_user.bet_id) %>
       
       <p>Seriously <%= current_user.displayname %>, you want to place another bet?
         Sorry, but only one bet per customer. If you'd like to see your, and everyone else's predictions
@@ -12,7 +12,7 @@
       <% else %>
       
 
-<%= semantic_form_for(@bet, remote: true)  do |f| %>
+<%= semantic_form_for(@bet)  do |f| %>
 
 
 

@@ -1,34 +1,68 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Betteroffwed</title>
+<meta charset="utf-8" />
+<title>Better Off Wed</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
 </head>
 <body>
-  <nav>
-    <% if user_signed_in?  %>
-    What's up, <%= current_user.displayname %>
-    <%= link_to 'Place new bet', new_bet_path %>
-    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-    <%= link_to "Home", root_path %>
-    <%= link_to 'About', about_path %>
-    <%= link_to 'Help', help_path %>
-    <% else %>
-    <%= link_to 'Sign in', new_user_session_path %> or
-    <%= link_to 'Register', new_user_registration_path %>
-    <%= link_to "Home", root_path %>
-    <%= link_to 'About', about_path %>
-    <%= link_to 'Help', help_path %>
-    <% end %>
-  </nav>
+   <div class="container" >
+      
+
+          <nav class="lead" >
+            <% if user_signed_in?  %>
+            What's up, <%= current_user.displayname %>
+            <div class="pull-right" style="margin: 0 0 25px 0;">
+
+        <%# I need to add a the condition that looks to see if the current user has placed a bet yet and, if they have, give them a link to see their bet. %>
+                  <% if User.exists?(current_user.bet_id) %>
+                    <%= link_to 'View Bet', bet_path(current_user.id) %> | 
+                    <%= link_to 'Sign Out', destroy_user_session_path %> | 
+                    <%= link_to "Home", root_path %> | 
+                    <%= link_to 'About', about_path %> | 
+                    <%= link_to 'Help', help_path %> 
+                  <% else %>
+                    <%= link_to 'New Bet', new_bet_path %> | 
+                    <%= link_to 'Sign Out', destroy_user_session_path %> | 
+                    <%= link_to "Home", root_path %> | 
+                    <%= link_to 'About', about_path %> | 
+                    <%= link_to 'Help', help_path %>
+                  <% end %> 
+          </div>
+            <% else %>
+            <div class='pull-right' style="margin: 0 0 25px 0;">
+            <%= link_to 'Sign In', new_user_session_path %> or
+            <%= link_to 'Register', new_user_registration_path %> | 
+            <%= link_to "Home", root_path %> | 
+            <%= link_to 'About', about_path %> | 
+            <%= link_to 'Help', help_path %>
+          </div>
+            <% end %>
+          </div>
+          </nav>
 
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
+
 
 <%= yield %>
 
+
+  
+  <footer class="text-center muted" style="clear:both; text-align:center; margin: 20px 0 0 0;">
+  Created, maintained and lovingly nurtured by <%= link_to 'Jon Levine', 'http://www.jonlevine.com' %> &copy <%= Time.now.year %>
+</footer>
+
+
+</div>
 </body>
 </html>
+
+
+

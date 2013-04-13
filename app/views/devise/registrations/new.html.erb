@@ -1,4 +1,7 @@
-<h2>Sign up</h2>
+<div class='container' style='background-color: #fffff3; padding: 25px 25px 25px 35px;'>
+
+<h1 class='lead' style='font-size: 28px;'>Register</h1>
+
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -15,7 +18,9 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div style='margin: 10px 0 0 0;'><%= f.submit 'Sign Up' %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

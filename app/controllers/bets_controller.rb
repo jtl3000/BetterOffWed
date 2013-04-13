@@ -45,6 +45,7 @@ class BetsController < ApplicationController
     @bet = Bet.new(params[:bet])
     @bet.user_id = current_user.id
     @bet.displayname = current_user.displayname
+    current_user.update_attributes({:bet_id => '10'})
 
     respond_to do |format|
       if @bet.save
@@ -84,4 +85,13 @@ class BetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+private
+
+def User
+  @user = User.find(current_user.id)
+end
+
 end
