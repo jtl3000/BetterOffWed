@@ -1,4 +1,9 @@
 class BetsController < ApplicationController
+  
+#after_save :set_bet_id
+
+ 
+
   # GET /bets
   # GET /bets.json
   def index
@@ -45,8 +50,8 @@ class BetsController < ApplicationController
     @bet = Bet.new(params[:bet])
     @bet.user_id = current_user.id
     @bet.displayname = current_user.displayname
-    current_user.update_attributes({:bet_id => '10'})
-
+    #@bet.user = @bet.id
+    
     respond_to do |format|
       if @bet.save
         format.html { redirect_to @bet, notice: 'Bet was successfully created.' }
@@ -57,6 +62,10 @@ class BetsController < ApplicationController
       end
     end
   end
+
+
+
+
 
   # PUT /bets/1
   # PUT /bets/1.json
@@ -90,8 +99,17 @@ class BetsController < ApplicationController
 
 private
 
+
 def User
   @user = User.find(current_user.id)
 end
+
+protected
+
+ # def set_bet_id
+  #  current_user.update_attributes({:bet_id => @bet.id})
+ # current_user.update_attributes({:bet_id => '10'})
+    
+ # end
 
 end
