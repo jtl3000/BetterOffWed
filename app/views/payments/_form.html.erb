@@ -1,5 +1,6 @@
-<%= form_for(@payment) do |f| %>
-  <% if @payment.errors.any? %>
+<%= semantic_form_for(@payment) do |f| %>
+<% f.inputs do %>
+  <%= if @payment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
@@ -12,17 +13,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.input :user_id, :as => :hidden %><br />
+    
   </div>
   <div class="field">
-    <%= f.label :displayname %><br />
-    <%= f.text_field :displayname %>
+    <%= f.input :displayname, :as => :hidden %><br />
+    
   </div>
   <div class="field">
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </div>
+    <%= f.input :amount, :as => :hidden %><br />
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>

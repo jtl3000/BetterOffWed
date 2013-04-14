@@ -6,7 +6,11 @@
 <p>Where we can all place bets on the life of an idiot</p>
 
 <% if user_signed_in? %>
-<a class='btn btn-large btn-success' href=<%= new_bet_path %>>Place Your Bet</a>
+   <% if Bet.exists?(current_user.bet_id) %>
+   <a class='btn btn-large btn-success' href=<%= bet_path(current_user.id) %>> View Your Bet</a>
+   <% else %>
+  <a class='btn btn-large btn-success' href=<%= new_bet_path %>>Place Your Bet</a>
+    <% end %>
 <a class='btn btn-large btn-danger' href=<%= destroy_user_session_path %>>Sign Out</a>
 <% else %>
 <a class='btn btn-large btn-primary' href=<%= new_user_registration_path %>>Register</a>

@@ -12,18 +12,19 @@ respond_to do |format|
   end
 
     def create
-    @payment = Payment.new(params[:bet])
+    @payment = Payment.new(params[:payment])
+    @payment.amount = '50'
     @payment.user_id = current_user.id
     @payment.displayname = current_user.displayname
-    @payment.bet_id = bet.id
+    @payment.bet_id = current_user.bet_id
 
     respond_to do |format|
-      if @bet.save
-        format.html { redirect_to @bet, notice: 'Bet was successfully created.' }
-        format.json { render json: @bet, status: :created, location: @bet }
+      if @payment.save
+        format.html { redirect_to @payment, notice: 'Bet was successfully created.' }
+        format.json { render json: @payment, status: :created, location: @payment }
       else
         format.html { render action: "new" }
-        format.json { render json: @bet.errors, status: :unprocessable_entity }
+        format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
     end
   end 

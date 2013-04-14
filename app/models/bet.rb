@@ -7,8 +7,11 @@ class Bet < ActiveRecord::Base
 
   after_save :set_bet_id_in_users
 
+private
+
   def set_bet_id_in_users
-    @bet.update_attributes({:current_user => Bet.last.id})
+    @user = User.find(Bet.last.user_id)
+    @user.update_attributes({:bet_id => Bet.last.id})
     
   end
 

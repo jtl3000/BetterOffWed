@@ -20,9 +20,11 @@ Betteroffwed::Application.routes.draw do
 
   match 'pay' => 'payments#new'
 
-  match 'ordersuccess' => 'payments#success'
+  match 'ordersuccess' => 'payments#create'
 
   match 'ordercancel' => 'payments#fail'
+
+
 
   resources :bets
 

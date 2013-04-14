@@ -13,7 +13,6 @@
 </head>
 <body>
    <div class="container" >
-      
 
           <nav class="lead" >
             <% if user_signed_in?  %>
@@ -21,7 +20,7 @@
             <div class="pull-right" style="margin: 0 0 25px 0;">
 
         <%# I need to add a the condition that looks to see if the current user has placed a bet yet and, if they have, give them a link to see their bet. %>
-                  <% if User.exists?(current_user.bet_id) %>
+                  <% if Bet.exists?(current_user.bet_id) %>
                     <%= link_to 'View Bet', bet_path(current_user.id) %> | 
                     <%= link_to 'Sign Out', destroy_user_session_path %> | 
                     <%= link_to "Home", root_path %> | 
