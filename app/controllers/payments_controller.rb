@@ -8,7 +8,7 @@ def new
 respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bets }
-    end
+    end 
   end
 
     def create
