@@ -1,6 +1,6 @@
 class Bet < ActiveRecord::Base
    attr_accessible :user_id, :displayname,  :EngagementDate, :OrigWeddingDate, :Postponement, 
-   :NewWeddingDate, :WillDivorce, :DivorceDate, :OneDead, :WhoKillsWho
+   :NewWeddingDate, :WillDivorce, :DivorceDate, :OneDead, :WhoKillsWho, :pregnant
 
    has_one :user
    accepts_nested_attributes_for :user

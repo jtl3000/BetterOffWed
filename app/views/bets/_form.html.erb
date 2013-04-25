@@ -33,7 +33,11 @@
 
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
+<div id='Pregnant' >
 
+    <%= f.input :pregnant, :label => "Will she get pregnant before they're married?", :input_html => { :id => 'Pregnant' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+
+    </div>
 
 
 
