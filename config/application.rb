@@ -53,6 +53,9 @@ module Betteroffwed
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
 
+    #Added this on 4/27/13 due to precompile failure on Heroku
+    config.assets.initialize_on_precompile = false
+
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
