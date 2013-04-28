@@ -9,6 +9,7 @@ gem 'rails', '3.2.13'
 gem 'activeadmin'
 gem "formtastic-plus-bootstrap"
 gem 'unicorn'
+gem 'tabletastic'
 
 # Gems used only for assets and not required
 # in production environments by default.

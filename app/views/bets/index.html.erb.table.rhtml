@@ -3,11 +3,13 @@
 
 <h1>Everyone's Bets</h1>
 
-
+<table>
   <% @bets.each do |bet| %>
-<div style='height: 250px; float: left; clear: top; margin: 10px; padding: 10px; background-color: #C2D1E0; border-radius: 15px;'>
+    <tr>
+    <th><%= bet.displayname %></th>
+    </tr>
 
-  <div class='lead'><%= bet.displayname %></div>
+    <td>
       <% if bet.EngagementDate == nil %>
       <% else %>
          Engagement Date: <%= bet.EngagementDate.strftime("%b, %Y") %><br>
@@ -30,9 +32,13 @@
     <% end %>
     Will one kill the other: <%= bet.OneDead %><br>
     Who'll kill who: <%= bet.WhoKillsWho %><br>
-  </div>
+    </td>
+  
 <% end %>
+</table>
 
 <br />
+
+<%= link_to 'New Bet', new_bet_path %>
 
 </div>
