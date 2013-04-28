@@ -1,5 +1,24 @@
+<div class='container' style='background-color: #fffff3; padding: 25px 25px 25px 35px;'>
 <p id="notice"><%= notice %></p>
 
+Here is your bet, <%= @bet.displayname %> <br>
+They'll be engaged by the end of: <%= @bet.EngagementDate %><br>
+The wedding will be by the end of: <%= @bet.OrigWeddingDate %><br>
+Will she be pregnant before the wedding: <%= @bet.pregnant %><br>
+Will the wedding be postponded? <%= @bet.Postponement %><br>
+The new wedding date will be: <%= @bet.NewWeddingDate %><br>
+Will they get a divorce: <%= @bet.WillDivorce %><br>
+They'll be divorced by the end of: <%= @bet.DivorceDate %><br>
+Will one of them kill the other: <%= @bet.OneDead %><br>
+Who will kill who: <%= @bet.WhoKillsWho %><br>
 
-<%= link_to 'Edit', edit_bet_path(@bet) %> |
+
+
+
+
+<br><br>
 <%= link_to 'Back', bets_path %>
+
+
+
+</div>
