@@ -1,3 +1,54 @@
 // Place all the styles related to the Bets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.indexView {
+  height: 250px;
+  float: left; 
+  clear: top; 
+  margin: 10px; 
+  padding: 10px; 
+  background-color: #C2D1E0; 
+  border-radius: 15px;
+}
+
+
+.customform {
+  list-style: none;
+  list-style-image: none;
+  font-weight: bold;
+
+.legend  {
+  color: red;
+  
+  
+  }
+
+.label,
+.badge {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999999;
+}
+
+
+.badge {
+  background-color: blue;
+  font-size: 35px;
+}
+
+.label {
+  background-color: #fffff3 ;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+}

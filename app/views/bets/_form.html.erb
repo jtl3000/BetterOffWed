@@ -29,9 +29,13 @@
       <% end %>
       <% end %>
       
+      <div id='EngagementDate' class='customform'>
       <%= f.input :EngagementDate, :label => "When do they get engaged?", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+      </div>
 
+      <div id='OrigWeddingDate'>
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+      </div>
 
 <div id='Pregnant' >
 
