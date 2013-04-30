@@ -1,6 +1,6 @@
-// Place all the styles related to the Bets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Place all the styles related to the Bets controller here.
+They will automatically be included in application.css.
+You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 .indexView {
   height: 250px;
@@ -14,41 +14,67 @@
 
 
 .customform {
+  float: left;
+  /* height: 250px; */
+  width: 250px;
   list-style: none;
   list-style-image: none;
   font-weight: bold;
+  margin: 10px; 
+  padding: 10px; 
+  background-color: #C2D1E0; 
+  border-radius: 15px;
+
 
 .legend  {
-  color: red;
-  
-  
+    border-bottom: 0px;
+    
+  }
+
+  ol {
+    list-style: none;
   }
 
 .label,
 .badge {
-  display: inline-block;
-  padding: 2px 4px;
-  font-size: 35px;
-  font-weight: bold;
-  line-height: 14px;
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 20px;
+  color: #000;
+  margin: 0 15px 15px 0;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #999999;
+  
+}
+
+form-search select,
+.form-inline select,
+.form-horizontal select,
+.form-search .help-inline,
+.form-inline .help-inline,
+.form-horizontal .help-inline,
+.form-search .uneditable-input,
+.form-inline .uneditable-input,
+.form-horizontal .uneditable-input,
+.form-search .input-prepend,
+.form-inline .input-prepend,
+.form-horizontal .input-prepend,
+.form-search .input-append,
+.form-inline .input-append,
+.form-horizontal .input-append {
+  display: inline-block;
+  *display: inline;
+  margin-bottom: 0;
+  vertical-align: middle;
+  width: 100%;
+  *zoom: 1;
+
 }
 
 
-.badge {
-  background-color: blue;
-  font-size: 35px;
-}
 
-.label {
-  background-color: #fffff3 ;
-  color: black;
-  font-size: 35px;
-  font-weight: bold;
-}
+
+
 
 }

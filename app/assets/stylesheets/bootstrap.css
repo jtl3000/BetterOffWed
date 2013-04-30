@@ -1044,7 +1044,7 @@ legend {
   line-height: 40px;
   color: #333333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  /* border-bottom: 1px solid #e5e5e5; */
 }
 
 legend small {
@@ -1113,6 +1113,7 @@ textarea,
 textarea {
   height: auto;
 }
+
 
 textarea,
 input[type="text"],
@@ -5620,11 +5621,12 @@ a.thumbnail:focus {
   list-style: none;
 }
 
+/*
 .label,
 .badge {
   display: inline-block;
   padding: 2px 4px;
-  font-size: 35px;
+  font-size: 11.844px;
   font-weight: bold;
   line-height: 14px;
   color: #ffffff;
@@ -5633,6 +5635,7 @@ a.thumbnail:focus {
   vertical-align: baseline;
   background-color: #999999;
 }
+*/
 
 .label {
   -webkit-border-radius: 3px;

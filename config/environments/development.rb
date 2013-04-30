@@ -32,8 +32,8 @@ Betteroffwed::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
-  # Expands the lines which load the assets
-  config.assets.debug = true
+  # Expands the lines which load the assets ---will compile all css into one file
+  config.assets.debug = false
 
   config.assets.digest = true
   

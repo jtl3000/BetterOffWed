@@ -1,5 +1,5 @@
 
-
+<div class='container' style='background-color: #fffff3; padding: 25px 25px 25px 35px;'>
 <% if user_signed_in? %>
 
   
@@ -29,34 +29,41 @@
       <% end %>
       <% end %>
       
+      <table>
+        <tr>
+          <td>
       <div id='EngagementDate' class='customform'>
-      <%= f.input :EngagementDate, :label => "When do they get engaged?", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+      <%= f.input :EngagementDate, :label => "When do they get engaged?", :input_html => { :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
       </div>
 
-      <div id='OrigWeddingDate'>
-    <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+      <div id='OrigWeddingDate' class='customform'>
+    <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :input_html => { :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
       </div>
 
-<div id='Pregnant' >
+<div id='Pregnant' class='customform'>
 
-    <%= f.input :pregnant, :label => "Will she get pregnant before they're married?", :input_html => { :id => 'Pregnant' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
-
-    </div>
-
-
-
-
-    <div id='Postponement' >
-
-    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+   <%= f.input :pregnant, :label => "Pregnancy before marriage?", :input_html => { :id => 'Pregnant', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
     </div>
 
-    <div id = 'NewWeddingDate' >
+</td></tr>
 
-    <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :input_html => { :id => 'NewWeddingDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+       <tr>
+          <td>
+   
+   <div id='Postponement' class='customform' >
+
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
     </div>
+
+    <div id = 'NewWeddingDate'  class='customform'>
+
+    <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :input_html => { :id => 'NewWeddingDate', :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+
+    </div>
+
+    </td></tr>
 
 <script>
 
@@ -64,31 +71,42 @@
 
 </script>
 
-
+<tr>
+          <td>
  
-<div id = 'WillDivorce'>
+<div id = 'WillDivorce' class='customform'>
 
-    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
     </div>
 
 
     
-<div id = 'DivorceDate'>
+<div id = 'DivorceDate' class='customform'>
 
-    <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :input_html => { :id => 'DivorceDate' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
+    <%= f.input :DivorceDate, :label => "They'll be divorced by the end of:", :input_html => { :id => 'DivorceDate', :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 
   </div>
 
-    <div id = 'OneDead'>
+  </td></tr>
 
-      <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+<tr>
+          <td>
+
+    <div id = 'OneDead' class='customform'>
+
+      <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
 
     </div>
     
-    <div id = 'WhoKillsWho'><%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' }, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+    <div id = 'WhoKillsWho' class='customform'>
+
+      <%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' , :class =>'input-medium'}, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
 
     </div>
+
+</td></tr></table>
+
     
       </ul>
     </div>
@@ -106,3 +124,6 @@
 <p>You must be <%= link_to 'registered', new_user_registration_path %> to place a bet.</p>
 
 <% end %>
+<%= link_to 'Back', bets_path %>
+
+</div>
