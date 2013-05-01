@@ -10,10 +10,11 @@
  *
  *= require_self
  *= require normalize
+ *= requre_tree active_admin
  *= require bootstrap
  *= require custom
  *= require bets
- *= requre active_admin
+
  * require formtastic_changes
  * require bootstrap-without-forms
  * require formtastic-plus-bootstrap
