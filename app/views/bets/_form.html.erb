@@ -51,13 +51,13 @@
        <tr>
           <td>
    
-   <div id='Postponement' class='customform' >
+   <div id='Postponement_div' class='customform' >
 
-    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'No' %> <br />
 
     </div>
 
-    <div id = 'NewWeddingDate'  class='customform'>
+    <div id = 'NewWeddingDate_div'  class='customform'>
 
     <%= f.input :NewWeddingDate, :label => "The new wedding date is:", :input_html => { :id => 'NewWeddingDate', :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
 

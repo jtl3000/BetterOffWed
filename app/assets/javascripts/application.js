@@ -15,3 +15,5 @@
 //= require bets
 //= require static_pages
 //= require form
+//= require_tree .
+//

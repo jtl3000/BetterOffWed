@@ -11,6 +11,7 @@ gem "formtastic-plus-bootstrap"
 gem 'unicorn'
 gem 'tabletastic'
 gem 'sass-rails',   '~> 3.2.3'
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,7 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 
 group :production, :staging do
   gem "pg"
