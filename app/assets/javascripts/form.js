@@ -48,16 +48,36 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-  var Postponement = $("#Postponement").val();
   var NewWeddingDate =$("#NewWeddingDate");
   var NewWeddingDate_div =$("#NewWeddingDate_div");
 
-  $(Postponement).change(function() {
-    if (this === 'Yes') {
-     $(NewWeddingDate).fadetoggle('fast');
-     $(NewWeddingDate_div).css('background', 'black;');
+  $("#Postponement").change(function() {
+    if ($(this).val() === 'Yes') {
+     NewWeddingDate_div.show('slow'); //css('visibility', 'visible');
      } else {
-     $(NewWeddingDate_div).hide();
+     NewWeddingDate_div.hide('slow'); //css('visibility', 'hidden');
+    }
+}).trigger('change'); // added trigger to calculate initial state
+})
+
+$(document).ready(function () {
+
+  $("#WillDivorce").change(function() {
+    if ($(this).val() === 'Yes') {
+     $("#DivorceDate_div").show('slow'); //css('visibility', 'visible');
+     } else {
+     $("#DivorceDate_div").hide('slow'); //css('visibility', 'hidden');
+    }
+}).trigger('change'); // added trigger to calculate initial state
+})
+
+$(document).ready(function () {
+
+  $("#OneDead").change(function() {
+    if ($(this).val() === 'Yes') {
+     $("#WhoKillsWho_div").show('slow'); //css('visibility', 'visible');
+     } else {
+     $("#WhoKillsWho_div").hide('slow'); //css('visibility', 'hidden');
     }
 }).trigger('change'); // added trigger to calculate initial state
 })
