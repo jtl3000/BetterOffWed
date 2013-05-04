@@ -40,9 +40,9 @@
     <%= f.input :OrigWeddingDate, :label => "They'll be married by the end of:", :input_html => { :class =>'input-small' }, :as => :date_select, :start_month => Time.now.month, :start_year => Time.now.year, :end_year => Time.now.year + 10, :order => [:month, :year] %><br />
       </div>
 
-<div id='Pregnant' class='customform' >
+<div id='Pregnant' class='customform' style="clear:both;">
 
-   <%= f.input :pregnant, :label => "Pregnancy before marriage?", :input_html => { :id => 'Pregnant', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'Yes' %> <br />
+   <%= f.input :pregnant, :label => "Pregnancy before marriage?", :input_html => { :id => 'Pregnant', :class =>'input-small' }, :as => :select, :include_blank => true, :collection => ['Yes', 'No'], :selected => '' %> <br />
 
     </div>
 
@@ -53,7 +53,7 @@
    
    <div id='Postponement_div' class='customform' >
 
-    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'No' %> <br />
+    <%= f.input :Postponement, :label => "Will the wedding be postponed?", :input_html => { :id => 'Postponement', :class =>'input-small' }, :as => :select, :include_blank => true, :collection => ['Yes', 'No'], :selected => '' %> <br />
 
     </div>
 
@@ -72,7 +72,7 @@
  
 <div id = 'WillDivorce_div' class='customform'>
 
-    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'No' %> <br />
+    <%= f.input :WillDivorce, :label => "Will they get a divorce?",  :input_html => { :id => 'WillDivorce', :class =>'input-small' }, :as => :select, :include_blank => true, :collection => ['Yes', 'No'], :selected => '' %> <br />
 
     </div>
 
@@ -91,13 +91,13 @@
 
     <div id = 'OneDead_div' class='customform'>
 
-      <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead', :class =>'input-small' }, :as => :select, :include_blank => false, :collection => ['Yes', 'No'], :selected => 'No' %> <br />
+      <%= f.input :OneDead, :label => "Will one of them kill the other?", :input_html => { :id => 'OneDead', :class =>'input-small' }, :as => :select, :include_blank => true, :collection => ['Yes', 'No'], :selected => '' %> <br />
 
     </div>
     
     <div id = 'WhoKillsWho_div' class='customform'>
 
-      <%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' , :class =>'input-medium'}, :as => :select, :collection => ['He kills her', 'She kills him'], :selected => 'He kills her' %> <br />
+      <%= f.input :WhoKillsWho, :label => "Who kills who?", :input_html => { :id => 'WhoKillsWho' , :class =>'input-medium'}, :as => :select, :include_blank => true, :collection => ['He kills her', 'She kills him'], :selected => '' %> <br />
 
     </div>
 
